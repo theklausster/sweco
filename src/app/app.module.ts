@@ -10,7 +10,7 @@ import { AppComponent } from './app.component';
 import { APP_RESOLVER_PROVIDERS } from './app.resolver';
 import { AppState, InternalStateType } from './app.service';
 import { HomeComponent } from './home';
-import { AboutComponent } from './about';
+import { RequirementsComponent } from './requirements';
 import { LocalstorageService } from './services/localstorage.service';
 import { ContactService } from './services/contact.service';
 
@@ -36,7 +36,7 @@ type StoreType = {
   bootstrap: [ AppComponent ],
   declarations: [
     AppComponent,
-    AboutComponent,
+    RequirementsComponent,
     HomeComponent,
   ],
   imports: [ // import Angular's modules

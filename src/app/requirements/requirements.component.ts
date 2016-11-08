@@ -3,12 +3,12 @@ import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
-  selector: 'about',
-  styleUrls: [ './about.component.sass' ],
-  templateUrl: './about.component.pug'
+  selector: 'requirements',
+  styleUrls: [ './requirements.component.sass' ],
+  templateUrl: './requirements.component.pug'
 })
   
-export class AboutComponent {
+export class RequirementsComponent {
 
   constructor(public route: ActivatedRoute) {
 

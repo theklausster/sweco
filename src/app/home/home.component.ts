@@ -11,6 +11,7 @@ import * as _ from 'lodash';
 export class HomeComponent {
   private contacts = [];
   private activeItem;
+  private filteredContacts;
   
   constructor(private contactService: ContactService) {
 
@@ -18,11 +19,15 @@ export class HomeComponent {
 
   ngOnInit() {
     this.contacts = this.contactService.getContacts();
+    this.filteredContacts = this.contacts; 
+  
   }
 
   private onSearch(searchInput) {
-    console.log(_.upperCase(searchInput));
+      this.filteredContacts = _.filter(this.contacts, (contact: any) => contact.name.toLowerCase().indexOf(searchInput.toLowerCase()) !== -1);
   }
+
+
 
   private itemClicked(item) {
       if (!this.activeItem) {

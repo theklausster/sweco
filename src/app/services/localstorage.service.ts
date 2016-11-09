@@ -15,13 +15,18 @@ export class LocalstorageService {
             this.observer = observer);
     }
 
-    public addItemToList(item: any, key: string) {
-        if (!this.itemExistsInList(item.id, key)) {
+    public populateItems(item: any, key: string) {
+        if (!this.itemExistsInList(item.name, key)) {
             let localList = this.getListFromLocalstorage(key);
             localList.push(item);
             window.localStorage.setItem(key, JSON.stringify(localList)); 
         }
-        // this.observer.next(true);
+
+    }
+
+    public addItem(item, key) {
+        this.populateItems(item, key);
+        this.observer.next(true);
     }
 
     public deleteItemFromList(id: any, key: string) {
@@ -38,11 +43,11 @@ export class LocalstorageService {
         }
     }
 
-    public itemExistsInList(id: any, key: string) {
+    public itemExistsInList(name: any, key: string) {
         let localList = this.getListFromLocalstorage(key);
         let index = _.findIndex(localList, (x: any) => {
             if (x) {
-                return x.id === id;
+                return x.name === name;
             }
         });
         if (index > -1) {

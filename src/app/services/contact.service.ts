@@ -18,8 +18,13 @@ export class ContactService {
 
     private populateLocalstorage() {
         _.forEach(this.contacts, (item) => {
-            this.localstoageService.addItemToList(item, this.LOCALSTORAGEKEY);
+            this.localstoageService.populateItems(item, this.LOCALSTORAGEKEY);
         })
+    }
+
+    public addItemToLocalStorage(item) {
+            this.localstoageService.addItem(item, this.LOCALSTORAGEKEY);
+
     }
 
     private populateContacts() {

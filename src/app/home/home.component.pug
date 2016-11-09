@@ -14,7 +14,7 @@ doctype html
 
     .wrap
         .search-wrapper
-            input(#lol, (keyup)="onSearch(lol.value)", placeholder="Søg i kontakter...")
+            input(#search, (keyup)="onSearch(search.value)", placeholder="Søg i kontakter...")
         .list-wrapper
             .list-item(*ngFor="let item of filteredContactsByTabs", (click)="itemClicked(item)", [class.active]="activeItem === item", [class.notActive]="activeItem !== item")
                 //- her burde man lave en ny component og sende et object med som input
@@ -27,4 +27,19 @@ doctype html
                         .title SKILLS
                     .skillproperty
                         .prop(*ngFor="let property of item.skills") {{property}}
-        
+        .add-wrapper
+            .add-title
+                i.fa.fa-plus
+                | Tilføj Kontakt
+            .add-name
+                input([(ngModel)]="tempContact.name", placeholder="Skriv et navn")
+            .add-skill
+                input([(ngModel)]="tempContact.skill", placeholder="Tilføj en kompetence")
+                i.fa.fa-plus((click)="addSkill()")
+            .add-skill-list
+                .add-skill-item(*ngFor="let skillItem of newContact.skills", (click)="removeSkill(skillItem)")
+                    | {{skillItem}}
+                    i.fa.fa-remove
+            .add-save((click)="saveNewPerson()")
+                i.fa.fa-save
+                | Gem

@@ -4,20 +4,34 @@
     100%
         opacity: 1
 .requirements-wrapper
-    width: 800px
+    width: 760px
     min-height: 600px
+    padding: 20px
     background-color: whitesmoke
-    display: flex
-    align-items: center
-    flex-direction: column
-    ul
-        animation: fade 0.5s 0.5s ease-in-out forwards
-        opacity: 0
-        width: 80%
-        li
+    
+    .ul-wrapper
+        margin: 10px 40px 10px 40px
+        border: 1px solid dimgrey
+        border-top: 0px
+        div
             display: flex
             align-items: center
-            padding: 5px
+            color: white
+            background-color: tomato
             i
-                padding-left: 20px
-                color: tomato
+                padding-right: 5px
+                padding-left: 5px
+        ul
+            list-style-type: none
+            padding: 0
+            animation: fade 0.5s 0.5s ease-in-out forwards
+            opacity: 0
+            width: 90%
+            li
+                display: flex
+                align-items: center
+                padding: 2px
+                margin-left: 5px
+                i
+                    padding-left: 20px
+                    color: tomato

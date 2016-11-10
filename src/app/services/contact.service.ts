@@ -30,7 +30,7 @@ export class ContactService {
     private populateContacts() {
         this.contacts = [{
                 id: 1,
-                name: 'Jimmy Lillegaard',
+                name: 'Uffe Elbæk',
                 skills: [
                     'java',
                     'c#',
@@ -39,7 +39,7 @@ export class ContactService {
             },
             {
                 id: 2,
-                name: 'Glenn Jensen',
+                name: 'Mette Frederiksen',
                 skills: [
                     'html',
                     'css',
@@ -48,16 +48,15 @@ export class ContactService {
             },
             {
                 id: 3,
-                name: 'Kenneth Olesen',
+                name: 'Kristian T Dahl',
                 skills: [
                     'php',
-                    'jquery',
-                    'ios'
+                    'jquery'
                 ]
             },
             {
                 id: 4,
-                name: 'Rune Bjerg',
+                name: 'Helle Thorning',
                 skills: [
                     'react',
                     'pug',
@@ -80,37 +79,33 @@ export class ContactService {
             },
             {
                 id: 6,
-                name: 'Lars Bilde',
+                name: 'Donald Trump',
                 skills: [
                     'java',
-                    'c#',
-                    'javascript'
+                    'c#'
                 ]
             },
             {
                 id: 7,
-                name: 'Stig Iversen',
+                name: 'Hillary Clinton',
                 skills: [
-                    'android',
-                    'xamarin'
+                    'javascript'
                 ]
             },
             {
                 id: 8,
-                name: 'Bent Nielsen',
+                name: 'Anders Samuelsen',
                 skills: [
-                    'java',
-                    'sql',
-                    'mongodb'
+                    'java'
+
                 ]
             },
             {
                 id: 9,
-                name: 'Kim Hansen',
+                name: 'Lars L Rasmussen',
                 skills: [
                     'mean',
                     'fullstack',
-                    'javascript'
                 ]
             }
         ]   

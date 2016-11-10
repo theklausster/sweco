@@ -9,7 +9,7 @@ doctype html
                 | {{tab}}
         | Totalt antal personer i databasen: {{contacts.length}}
         .reset((click)="resetTabs()")
-            i.fa.fa-refresh 
+            i.fa.fa-undo
             | Filter
 
     .wrap
@@ -27,19 +27,24 @@ doctype html
                         .title SKILLS
                     .skillproperty
                         .prop(*ngFor="let property of item.skills") {{property}}
-        .add-wrapper
-            .add-title
-                i.fa.fa-plus
-                | Tilføj Kontakt
-            .add-name
-                input([(ngModel)]="tempContact.name", placeholder="Skriv et navn")
-            .add-skill
-                input([(ngModel)]="tempContact.skill", placeholder="Tilføj en kompetence")
-                i.fa.fa-plus((click)="addSkill()")
-            .add-skill-list
-                .add-skill-item(*ngFor="let skillItem of newContact.skills", (click)="removeSkill(skillItem)")
-                    | {{skillItem}}
-                    i.fa.fa-remove
-            .add-save((click)="saveNewPerson()")
-                i.fa.fa-save
-                | Gem
+    .add-wrapper
+        .add-title
+            i.fa.fa-male
+            | Tilføj Kontakt
+        .add-name
+            input([(ngModel)]="tempContact.name", placeholder="Skriv et navn", (keyup)="toggleWarning()")
+        .add-skill
+            input([(ngModel)]="tempContact.skill", placeholder="Tilføj en kompetence", (keyup)="toggleWarning()")
+            i.fa.fa-plus((click)="addSkill()")
+        .add-skill-list
+            .add-skill-item(*ngFor="let skillItem of newContact.skills", (click)="removeSkill(skillItem)")
+                | {{skillItem}}
+                i.fa.fa-remove
+        .add-save((click)="saveNewPerson()", *ngIf="newContact.skills.length > 0")
+            i.fa.fa-save
+            | Gem
+        .add-warning(*ngIf="hideUntilError")
+                div([class.warningSkillActive]="warningSkill", [class.warningSkillNotActive]="!warningSkill", *ngIf="newContact.skills.length === 0")
+                    | Der skal tilføjes et eller flere skills
+                div([class.warningNameActive]="warningName", [class.warningNameNotActive]="!warningName")
+                    | Der skal tilføjes et navn

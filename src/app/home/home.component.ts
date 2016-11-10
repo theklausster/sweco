@@ -15,12 +15,22 @@ export class HomeComponent {
   private filterTabs = [];
   private filteredContactsByTabsTemp = []; // for onSearch Function
   private filteredContactsByTabs = [];
-  private tempContact: any = {}
+  private tempContact: any = {
+      name: '',
+      skills: []
+  };
   private newContact = {
       name: '',
       skills: []
   };
   private subscription;
+
+  // Used for animation
+  private warningSkill = undefined;
+  private warningName = undefined;
+  private hideUntilError;
+  private saved;
+  
 
 
   constructor(private contactService: ContactService, private localstorageService: LocalstorageService) {
@@ -43,7 +53,6 @@ export class HomeComponent {
 
   private populateContacts() {      
       this.contacts = this.contactService.getContacts();
-      console.log(this.contacts);
       
   }
 
@@ -157,16 +166,38 @@ export class HomeComponent {
       _.remove(this.newContact.skills, (item) => {
           return input === item;
       });
+      this.toggleWarning();
+  }
+
+  private toggleWarning() {
+      this.saved = false;
+      if(this.warningName) {
+          this.warningName = !this.warningName;
+      }
+      if(this.warningSkill) {
+          this.warningSkill = !this.warningSkill;
+      }
   }
 
   private saveNewPerson() {
-    console.log(this.tempContact.name);
-      if (this.tempContact.name) {
+      this.hideUntilError = true;
+      if (this.tempContact.name.length === 0) {
+          this.warningName = true;
+      }
+
+      if (this.newContact.skills.length === 0) {
+          this.warningSkill = true
+      }
+
+      if (this.tempContact.name.length > 0 && this.newContact.skills.length > 0) {
+        this.hideUntilError = false;
         this.newContact.name = this.tempContact.name;
         this.contactService.addItemToLocalStorage(this.newContact);
         this.newContact.name = '';
         this.newContact.skills = [];
         this.tempContact.name = '';
+        this.saved = true;
+        
       }
 
   }

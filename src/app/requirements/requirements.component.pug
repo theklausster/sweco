@@ -1,17 +1,62 @@
 .requirements-wrapper
-    ul
-        li Der skal være en liste over kontaktpersoner oprettet i systemet.
-            i.fa.fa-check-square-o.fa-2x
-        li Man skal kunne vælge en kontaktperson og se detaljer for vedkommende.
-            i.fa.fa-check-square-o.fa-2x
-        li Man skal kunne oprette en ny kontaktperson
-        li Hver kontaktperson skal kunne have tilføjet nogle kompetencer. En kontaktperson kan godt have flere kompetencer tilknyttet.
-            i.fa.fa-check-square-o.fa-2x
-        li Når man ser listen over kontaktpersoner skal det være muligt at filtrere listen, så man kun ser de kontakter, der har en specifik kompetence. 
-            i.fa.fa-check-square-o.fa-2x
-        li Der skal være en statustekst når man filtrerer listen. Statusteksten skal  være ”Viser X personer med kompetencen Y. Totalt antal personer i databasen: Z”, hvor X er antallet af personer, der har den valgte kompetence. Y er navnet på den valgte kompetence. Z er det totale antal af kontaktpersoner i databasen.
-            i.fa.fa-check-square-o.fa-2x
-        li Da der ikke er nogen backend skal indtastede kontaktpersoner gemmes i localstore, så de består når siden genindlæses.
-            i.fa.fa-check-square-o.fa-2x
+        .ul-wrapper
+            div
+                i.fa.fa-check-square-o.fa-1x 
+                | Krav
+            ul 
+                li - Der skal være en liste over kontaktpersoner oprettet i systemet.
+                    i.fa.fa-check-square-o.fa-1x
+                li - Man skal kunne vælge en kontaktperson og se detaljer for vedkommende.
+                    i.fa.fa-check-square-o.fa-1x
+                li - Man skal kunne oprette en ny kontaktperson
+                    i.fa.fa-check-square-o.fa-1x
+                li - Hver kontaktperson skal kunne have tilføjet nogle kompetencer. En kontaktperson kan godt have flere kompetencer tilknyttet.
+                    i.fa.fa-check-square-o.fa-1x
+                li - Når man ser listen over kontaktpersoner skal det være muligt at filtrere listen, så man kun ser de kontakter, der har en specifik kompetence. 
+                    i.fa.fa-check-square-o.fa-1x
+                li - Der skal være en statustekst når man filtrerer listen. Statusteksten skal  være ”Viser X personer med kompetencen Y. Totalt antal personer i databasen: Z”, hvor X er antallet af personer, der har den valgte kompetence. Y er navnet på den valgte kompetence. Z er det totale antal af kontaktpersoner i databasen.
+                    i.fa.fa-check-square-o.fa-1x
+                li - Da der ikke er nogen backend skal indtastede kontaktpersoner gemmes i localstore, så de består når siden genindlæses.
+                    i.fa.fa-check-square-o.fa-1x
+        .ul-wrapper
+            div
+                i.fa.fa-check-square-o.fa-1x
+                | Eksta features
+            ul 
+                li - Man kan slette en bruger
+                    i.fa.fa-check-square-o.fa-1x
+                li - Man kan tilføje filter tabs dynamisk
+                    i.fa.fa-check-square-o.fa-1x
+                li - Animationer
+                    i.fa.fa-check-square-o.fa-1x
+                li - Routing
+                    i.fa.fa-check-square-o.fa-1x
 
+        .ul-wrapper
+            div
+                i.fa.fa-flag.fa-1x 
+                | Forbedringer til V2.0
+            ul 
+                li - Dele home.component.ts op i flere små components, lave en træstruktur og sende data ned i childs fra parent
+                li - Generelt Design
+                li - Infinite scroll hvis der er mange kontakt personer
+                li - Gøre filter til en dropdown istedet. Lige nu passer det fint til en lille app. Det var en udfordring og få sorteringen til at virke som jeg ønskede :)
+                li - Lave siden responsiv
+                li - Slette en kontakt fra listen
+                li - Postprefixes/autoprefixer for at gøre den cross browser kompatibel (Kun testet i chrome)
 
+        .ul-wrapper
+            div
+                i.fa.fa-handshake-o
+                | Setup
+            ul 
+                li - pug
+                li - Angular 2
+                li - Typescript 
+                li - Webpack
+                li - AngularClass generator 
+                li - lodash
+                li - Font-awesome
+                
+
+            

@@ -119,7 +119,6 @@
             background-color: powderblue
             padding: 5px
             cursor: pointer
-            border-radius: 10px
             i
                 margin-right: 5px
 
@@ -144,19 +143,112 @@
                 i
                     padding-right: 5px
 
-        .add-wrapper
-            .add-title
-                i
-            .add-name
-                input
-            .add-skill
-                input
-                i
-            .add-skill-list
-                .add-skill-item
-                    i
-            .add-save
+    .add-wrapper
+        animation: fade 0.5s 1.5s ease-in-out forwards
+        margin-top: 5px
+        opacity: 0
+        .add-title
+            background-color: tomato
+            text-align: center
+            color: white
+            margin-bottom: 5px
+            i
+                padding-right: 5px
+        .add-name
+            position: relative
+            z-index: 1            
+            input
+        .add-skill
+            position: relative
+            z-index: 1 
+            input
+            i
+                padding: 5px
                 cursor: pointer
-                background-color: powderblue
+                
+
+        .add-skill-list
+            position: relative
+            z-index: 1            
+            .add-skill-item
                 i
-                     
+                    padding: 5px
+                    cursor: pointer
+        .add-save
+            &:hover
+                background-color: darken(powderblue, 10%)
+            position: relative
+            width: 60px
+            padding: 5px
+            background-color: powderblue
+            text-align: center
+            cursor: pointer
+            z-index: 1            
+            i
+                padding-right: 5px
+
+        @keyframes warningSkillIn
+            0% 
+                transform: translateY(-100%)
+                opacity: 0
+            100%
+                transform: translateY(0%)
+                opacity: 1
+
+        @keyframes warningSkillOut
+            0% 
+                transform: translateY(0%)
+                opacity: 1
+            100%
+                transform: translateY(-100%)
+
+        @keyframes warningNameIn
+            0% 
+                transform: translateY(-100%)
+                opacity: 0
+            100%
+                transform: translateY(0%)
+                opacity: 1
+
+        @keyframes warningNameOut
+            0% 
+                transform: translateY(0%)
+                opacity: 1
+            100%
+                transform: translateY(-100%)
+                
+
+        .add-warning
+            height: 20px
+            position: relative
+            max-width: 100px
+            div
+                opacity: 0
+            .warningSkillActive
+                animation: warningSkillIn 0.5s ease-in-out forwards
+            .warningSkillNotActive
+                animation: warningSkillOut 0.5s ease-in-out forwards 
+            .warningNameActive 
+                animation: warningNameIn 0.5s ease-in-out forwards
+            .warningNameNotActive
+                animation: warningNameOut 0.5s ease-in-out forwards
+        .saved
+            .savedActive
+                animation: saved 3s ease-in-out forwards
+
+
+        @keyframes saved
+            0% 
+                transform: translateY(-100%)
+                opacity: 0
+            30%
+                transform: translateY(0%)
+                opacity: 1
+            70%
+                transform: translateY(0%)
+                opacity: 1
+            100%
+                transform: translateY(-100%)
+                opacity: 0
+
+
